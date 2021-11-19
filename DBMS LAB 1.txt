@@ -1,0 +1,22 @@
+CREATE TABLE EMP_219 ( 
+emp_id integer primary key,
+ename varchar(50),
+doj date,
+job_id number(5),
+salary number(10,2),
+comm number(8,2)
+);
+desc emp_219;
+SELECT * from emp_219;
+Insert into EMP_219 Values(6,'dsds','1-FEB-2021',2,6500.00,500,1234);
+
+alter table emp_219 add (phone number(10));
+
+Alter table emp_219 modify (ename varchar(60));
+
+alter table emp_219 rename column job_id to dept;
+
+update emp_219 set phone = 1234567890 where emp_id=2;
+update emp_219 set phone = 1234567560 where emp_id=4;
+
+COMMIT;
