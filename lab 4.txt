@@ -1,0 +1,32 @@
+desc emp_219;
+
+select * from department;
+
+create table Department(
+d_id number(5) primary key,
+d_name varchar(10),
+loc varchar(50)
+);
+
+select * from emp_219;
+update EMP_219 set ename= 'Marry' where emp_id=3;
+
+insert into department values (10,'CSE','Mumbai');
+insert into department values (20,'IT','Kolkata');
+insert into department values (30,'BT','Kolkata');
+insert into department values (40,'ECE','Mumbai');
+
+select e.ename, d.d_name from emp_219 e,department d where e.dept= d.d_id and e.ename like '%a%';
+
+select e.ename, d.d_name, d.loc from emp_219 e,DEPARTMENT d where e.DEPT=d.D_ID and e.comm is not null; 
+
+select e.ename,e.emp_id, d.d_name from emp_219 e,department d where d.D_ID=e.dept and d.LOC = 'Mumbai';
+
+select d_name from department where d_id in (select dept from emp_219 where ename like '%a%');
+
+select emp_id,ename,salary from emp_219 where salary >(select avg(salary) from emp_219);
+
+select avg(salary) from emp_219;
+select count(*) from emp_219;
+
+select ename,salary from emp_219 where salary =(select min(salary) from (select distinct salary from emp_219 order by salary desc) where rownum<4);
